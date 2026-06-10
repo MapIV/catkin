@@ -38,7 +38,7 @@ endif()
 # pdb's under CATKIN_DEVEL_PREFIX and copies them over at the end
 # of the cmake build.
 if(BUILD_SHARED_LIBS)
-  if(WIN32)
+  if(WIN32 AND NOT VCPKG_TOOLCHAIN)
     function(add_library library)
       # Check if its an external, imported library (e.g. boost libs via cmake module definition)
       list(FIND ARGN "IMPORTED" FIND_IMPORTED)
